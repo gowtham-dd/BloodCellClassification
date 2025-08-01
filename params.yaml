@@ -1,1 +1,20 @@
-key : Value
+IMG_HEIGHT: 244
+IMG_WIDTH: 244
+BATCH_SIZE: 8
+TEST_SIZE: 0.3
+VAL_SIZE: 0.2
+SEED: 42
+
+# Training Parameters
+EPOCHS: 15
+LEARNING_RATE: 0.001
+BATCH_SIZE: 8  # Should match data transformation
+IMG_HEIGHT: 244
+IMG_WIDTH: 244
+
+# Model Evaluation specific parameters
+model_evaluation:
+  batch_size: 8
+  img_height: 224
+  img_width: 224
+  target_metric: "accuracy"

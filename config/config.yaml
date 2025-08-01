@@ -9,3 +9,25 @@ data_ingestion:
   unzipped_data_dir: artifacts/data_ingestion/BloodCell
 
 
+data_transformation:
+  root_dir: artifacts/data_transformation
+  EOSINOPHIL_dirs:
+    - artifacts/data_ingestion/BloodCell/TRAIN/EOSINOPHIL
+  LYMPHOCYTE_dir:
+    - artifacts/data_ingestion/BloodCell/TRAIN/LYMPHOCYTE
+  MONOCYTE_dirs:
+    - artifacts/data_ingestion/BloodCell/TRAIN/MONOCYTE
+  NEUTROPHIL_dirs:
+    - artifacts/data_ingestion/BloodCell/TRAIN/NEUTROPHIL
+
+model_training:
+  root_dir: artifacts/model_training
+  trained_model_path: artifacts/model_training/blood_cell_model
+  tensorboard_log_dir: artifacts/model_training/logs
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/test_images.csv
+  model_path: artifacts/model_training/blood_cell_model
+  metric_file_name: artifacts/model_evaluation/metrics.json
+  mlflow_uri: "https://dagshub.com/gowtham-dd/BloodCellClassification.mlflow"
